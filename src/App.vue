@@ -55,7 +55,7 @@ export default {
 
     selectChange(selectValue){
 
-        fetch('httP://192.168.88.143:5000/items?status='+selectValue, 
+        fetch('httP://localhost:5000/items?status='+selectValue, 
         {
           method: 'GET',
         })
@@ -69,7 +69,7 @@ export default {
       // console.log("123",selectValue,this.items);
     },
     delitem(id){
-       fetch('httP://192.168.88.143:5000/deleteitem/'+id, 
+       fetch('httP://localhost:5000/deleteitem/'+id, 
             {
                 method: 'DELETE',
             })
@@ -77,7 +77,7 @@ export default {
       
     },
     updateStatus(updataData){
-        fetch('httP://192.168.88.143:5000/updatestatus/'+updataData.id, 
+        fetch('httP://localhost:5000/updatestatus/'+updataData.id, 
         {
             method: 'PUT',
         })
@@ -96,7 +96,7 @@ export default {
         title:itemData.title
       }
 
-      fetch('httP://192.168.88.143:5000/additem', 
+      fetch('httP://localhost:5000/additem', 
       {
           method: 'POST',
           body: JSON.stringify(data),
@@ -121,7 +121,7 @@ export default {
           }
            console.log(data);
           //console.log(data);
-          fetch('httP://192.168.88.143:5000/updateitem/'+updataData.id, 
+          fetch('httP://localhost:5000/updateitem/'+updataData.id, 
           {
               method: 'PUT',
               body: JSON.stringify(data),
@@ -147,7 +147,7 @@ export default {
 
   mounted(){
 
-     fetch('httP://192.168.88.143:5000/items', 
+     fetch('httP://localhost:5000/items', 
       {
         method: 'GET',
       })
